@@ -1,0 +1,31 @@
+{
+  "name": "vladimir",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "vladimir": "brain-games.js",
+    "brain-games": "bin/brain-games.js"
+  },
+"type": "module",
+"jest": {
+  "testEnvironment": "node",
+  "transform": {}
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mirgord/frontend-project-lvl1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mirgord/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/Mirgord/frontend-project-lvl1#readme"
+}
