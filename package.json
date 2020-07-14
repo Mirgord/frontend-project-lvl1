@@ -36,6 +36,8 @@
     "jest": "^26.1.0"
   },
   "dependencies": {
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
     "readline-sync": "^1.4.10"
   }
 }
