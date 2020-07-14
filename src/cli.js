@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 
 console.log('May I have your name?');
 const printName = readlineSync.question('Your answer: ');
-console.log(`Hello, ${printName}!`);
+const name = printName;
+console.log(`Hello, ${name}!`);
 
-export default printName;
+export default name;
