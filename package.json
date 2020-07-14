@@ -7,18 +7,20 @@
     "example": "example"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sloc": "sloc",
+    "build": "NODE_ENV=production babel src --out-dir dist",
+    "prepublishOnly": "npm run build"
   },
   "author": "",
   "license": "ISC",
   "bin": {
-    "vladimir": "brain-games.js",
     "brain-games": "bin/brain-games.js"
   },
-"type": "module",
-"jest": {
-  "testEnvironment": "node",
-  "transform": {}
+  "type": "module",
+  "jest": {
+    "testEnvironment": "node",
+    "transform": {}
   },
   "repository": {
     "type": "git",
@@ -27,5 +29,13 @@
   "bugs": {
     "url": "https://github.com/Mirgord/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/Mirgord/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/Mirgord/frontend-project-lvl1#readme",
+  "devDependencies": {
+    "eslint": "^7.4.0",
+    "eslint-plugin-react": "^7.20.3",
+    "jest": "^26.1.0"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
