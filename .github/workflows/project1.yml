@@ -23,7 +23,7 @@ jobs:
         # The Node.js version to configure
         with:
           node-version: ${{ matrix.node-version }}
-          - name: Run linter
+      - name: Run linter
         # Run Linter
         run: |
-          make lint
+          make lint       
