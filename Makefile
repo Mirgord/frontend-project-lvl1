@@ -1,11 +1,11 @@
 install:
 	npm install
 brain-games:
-	node bin/games/brain-games.js
+	node bin/brain-games.js
 even-games:
-	node bin/games/brain-even.js
+	node bin/brain-even.js
 brain-calc:
-	node bin/games/brain-calc.js
+	node bin/brain-calc.js
 lint:
 	npx eslint .
 publishing:

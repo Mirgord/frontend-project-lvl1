@@ -1,23 +1,22 @@
 {
   "name": "vladimir",
   "version": "1.0.0",
-  "description": "",
+  "description": "<a href=\"https://codeclimate.com/github/codeclimate/codeclimate/maintainability\"><img src=\"https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability\" /></a> [![Node CI](https://github.com/Mirgord/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/Mirgord/frontend-project-lvl1/actions) https://asciinema.org/a/dEQK6PeAUZykbYHZDRXbeIFqd",
   "main": "index.js",
   "directories": {
     "example": "example"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sloc": "sloc",
     "build": "NODE_ENV=production babel src --out-dir dist",
     "prepublishOnly": "npm run build"
   },
   "author": "",
   "license": "ISC",
   "bin": {
-    "brain-games": "bin/games/brain-games.js",
-    "brain-even": "bin/games/brain-even.js",
-    "brain-calc": "bin/games/brain-even.js"
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js",
+    "brain-calc": "bin/brain-calc.js"
   },
   "type": "module",
   "jest": {
