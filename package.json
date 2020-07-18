@@ -15,8 +15,9 @@
   "author": "",
   "license": "ISC",
   "bin": {
-    "brain-games": "bin/brain-games.js",
-    "brain-even": "bin/brain-even.js"
+    "brain-games": "bin/games/brain-games.js",
+    "brain-even": "bin/games/brain-even.js",
+    "brain-calc": "bin/games/brain-even.js"
   },
   "type": "module",
   "jest": {
@@ -41,6 +42,7 @@
     "jest": "^26.1.0"
   },
   "dependencies": {
+    "@hexlet/pairs": "^1.0.15",
     "eslint-config-airbnb": "^18.2.0",
     "readline-sync": "^1.4.10"
   }
