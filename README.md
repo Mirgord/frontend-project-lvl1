@@ -3,3 +3,4 @@
 [![Node CI](https://github.com/Mirgord/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/Mirgord/frontend-project-lvl1/actions)
 [![asciicast](https://asciinema.org/a/dEQK6PeAUZykbYHZDRXbeIFqd.svg)](https://asciinema.org/a/dEQK6PeAUZykbYHZDRXbeIFqd)
 [![asciicast](https://asciinema.org/a/348353.svg)](https://asciinema.org/a/348353)
+[![asciicast](https://asciinema.org/a/348652.svg)](https://asciinema.org/a/348652)
