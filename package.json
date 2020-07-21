@@ -16,7 +16,9 @@
   "bin": {
     "brain-games": "bin/brain-games.js",
     "brain-even": "bin/brain-even.js",
-    "brain-calc": "bin/brain-calc.js"
+    "brain-calc": "bin/brain-calc.js",
+    "brain-gcd": "bin/brain-gcd.js",
+    "brain-progression": "bin/brain-progression.js"
   },
   "type": "module",
   "jest": {
@@ -32,7 +34,7 @@
   },
   "homepage": "https://github.com/Mirgord/frontend-project-lvl1#readme",
   "devDependencies": {
-    "eslint": "^7.2.0",
+    "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.18.0",

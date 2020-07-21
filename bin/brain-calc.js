@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-// import { cons, car, cdr, toString, isPair} from '@hexlet/pairs';
 // import { getRandomInRange, welcome, askName } from './index.js';
 const getRandomInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 // const randomNum1 = getRandomInRange();
@@ -19,17 +18,25 @@ const сheckResponses = () => {
   const operatores = ('+-*');
   for (let i = 0; i < operatores.length; i += 1) {
     const current = operatores[i];
-    const num1 = getRandomInRange(1, 49);
-    const num2 = getRandomInRange(1, 49);
-    const result = (`${num1} ${current} ${num2}`);
-    const correct = this.eval(result);
-    console.log(correct);
+    const num1 = getRandomInRange(1, 10);
+    const num2 = getRandomInRange(1, 10);
+    let result = 0;
+    switch (current) {
+      case '+':
+        result = num1 + num2;
+        break;
+      case '-':
+        result = num1 - num2;
+        break;
+      default:
+        result = num1 * num2;
+    }
     const userAnswer = readlineSync.question(`Question:${num1} ${current} ${num2}\nYour answer: `);
-    if (result === userAnswer) {
+    if (String(result) === userAnswer) {
       console.log('Correct!');
     }
-    if (result !== userAnswer) {
-      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${result}.\n Let's try again, ${printName}!`);
+    if (String(result) !== userAnswer) {
+      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${result}.\nLet's try again, ${printName}!`);
     }
   }
   return console.log(`Congratulations, ${printName}!`);
