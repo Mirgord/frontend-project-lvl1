@@ -25,8 +25,6 @@ const checkProgression = () => {
   const randomIndex = getRandomInRange(2, 9);
   const arrayNumbers = getProgression(randomStart);
   const hiddenNumber = arrayNumbers.splice(randomIndex, 1, '..');
-  console.log(arrayNumbers);
-  console.log(hiddenNumber);
   const userAnswer = readlineSync.question(`Question: ${arrayNumbers.join(' ')} \nYour answer: `);
   if (hiddenNumber.join() === userAnswer) {
     console.log('Correct!');
