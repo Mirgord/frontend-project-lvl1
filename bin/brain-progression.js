@@ -9,32 +9,31 @@ console.log(welcome);
 console.log(askName);
 const printName = readlineSync.question('Your answer: ');
 console.log(`Hello, ${printName}!`);
-// const maxDevider = (randomNum1, randomNum2) => {
-//   let NOD = randomNum2;
-//   while (NOD >= 1) {
-//     if (randomNum1 % NOD === 0 && randomNum2 % NOD === 0) {
-//       return NOD;
-//     }
-//     NOD -= 1;
-//   }
-//   return 1;
-// };
+const getProgression = (numb) => {
+  const array = [];
+  array[0] = numb;
+  for (let i = 0; i < 10; i += 1) {
+    const lastNumb = array[array.length - 1];
+    array.push(lastNumb + 2);
+  }
+  return array;
+};
 
-const сheckProgression = () => {
-  console.log('Find the greatest common divisor of given numbers.');
-  const randomStart = getRandomInRange(2, 30);
-  const randomIndex = getRandomInRange(2, 10);
-  let stringProgression = String(randomStart);
-  for (let i = 0; i < 3; i += 1) {
-    
-    const userAnswer = readlineSync.question(`Question: ${randomNum1} ${randomNum2}\nYour answer: `);
-    if (maxDevider(randomNum1, randomNum2) === Number(userAnswer)) {
-      console.log('Correct!');
-    }
-    if (maxDevider(randomNum1, randomNum2) !== Number(userAnswer)) {
-      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${maxDevider(randomNum1, randomNum2)}.\nLet's try again, ${printName}!`);
-    }
+const checkProgression = () => {
+  console.log('What number is missing in the progression?');
+  const randomStart = getRandomInRange(2, 50);
+  const randomIndex = getRandomInRange(2, 9);
+  const arrayNumbers = getProgression(randomStart);
+  const hiddenNumber = arrayNumbers.splice(randomIndex, 1, '..');
+  console.log(arrayNumbers);
+  console.log(hiddenNumber);
+  const userAnswer = readlineSync.question(`Question: ${arrayNumbers.join(' ')} \nYour answer: `);
+  if (hiddenNumber.join() === userAnswer) {
+    console.log('Correct!');
+  }
+  if (hiddenNumber.join() !== userAnswer) {
+    return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${hiddenNumber.join()}.\nLet's try again, ${printName}!`);
   }
   return console.log(`Congratulations, ${printName}!`);
 };
-сheckResponses();
+checkProgression();
