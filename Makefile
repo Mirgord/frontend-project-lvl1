@@ -11,8 +11,7 @@ brain-gcd:
 brain-progression:
 	node bin/brain-progression.js
 brain-prime:
-    node bin/brain-progression.js
-	
+	node bin/brain-progression.js
 lint:
 	npx eslint .
 publishing:
