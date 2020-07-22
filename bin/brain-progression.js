@@ -21,16 +21,18 @@ const getProgression = (numb) => {
 
 const checkProgression = () => {
   console.log('What number is missing in the progression?');
-  const randomStart = getRandomInRange(2, 50);
-  const randomIndex = getRandomInRange(2, 9);
-  const arrayNumbers = getProgression(randomStart);
-  const hiddenNumber = arrayNumbers.splice(randomIndex, 1, '..');
-  const userAnswer = readlineSync.question(`Question: ${arrayNumbers.join(' ')} \nYour answer: `);
-  if (hiddenNumber.join() === userAnswer) {
-    console.log('Correct!');
-  }
-  if (hiddenNumber.join() !== userAnswer) {
-    return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${hiddenNumber.join()}.\nLet's try again, ${printName}!`);
+  for (let i = 0; i < 3; i += 1) {
+    const randomStart = getRandomInRange(2, 50);
+    const randomIndex = getRandomInRange(2, 9);
+    const arrayNumbers = getProgression(randomStart);
+    const hiddenNumber = arrayNumbers.splice(randomIndex, 1, '..');
+    const userAnswer = readlineSync.question(`Question: ${arrayNumbers.join(' ')} \nYour answer: `);
+    if (hiddenNumber.join() === userAnswer) {
+      console.log('Correct!');
+    }
+    if (hiddenNumber.join() !== userAnswer) {
+      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${hiddenNumber.join()}.\nLet's try again, ${printName}!`);
+    }
   }
   return console.log(`Congratulations, ${printName}!`);
 };
