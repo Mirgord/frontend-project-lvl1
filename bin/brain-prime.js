@@ -9,7 +9,7 @@ const printName = readlineSync.question('Your answer: ');
 console.log(`Hello, ${printName}!`);
 
 const isNumberPrime = (current) => {
-  for (let divider = 2; divider < current; divider += 1) {
+  for (let divider = 2; divider <= current; divider += 1) {
     if (current / divider === 1) {
       return ('yes');
     }
@@ -34,4 +34,4 @@ const сheckPrimenumbers = (array) => {
   }
   return console.log(`Congratulations, ${printName}!`);
 };
-сheckPrimenumbers([17, 9, 7]);
+сheckPrimenumbers([15, 6, 7]);
