@@ -3,7 +3,6 @@
 plugins:
   # https://github.com/jest-community/eslint-plugin-jest
   - jest
-  - 'airbnb-base'
 
 # https://eslint.org/docs/user-guide/configuring#specifying-environments
 env:
