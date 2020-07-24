@@ -1,38 +1,44 @@
 import readlineSync from 'readline-sync';
 
+//  Get random number
 const getRandomInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 getRandomInRange(1, 49);
 const welcome = ('Welcome to the Brain Games!');
 const askName = ('May I have your name?');
 
-export {
-  getRandomInRange, welcome, askName,
+//  brain-calc
+const checkCalc = () => {
+  console.log(welcome);
+  console.log(askName);
+  const userName = readlineSync.question('Your answer: ');
+  console.log(`Hello, ${userName}!`);
+  console.log('What is the result of the expression?');
+  const operatores = ('+-*');
+  for (let i = 0; i < operatores.length; i += 1) {
+    const current = operatores[i];
+    const num1 = getRandomInRange(1, 10);
+    const num2 = getRandomInRange(1, 10);
+    let result = 0;
+    switch (current) {
+      case '+':
+        result = num1 + num2;
+        break;
+      case '-':
+        result = num1 - num2;
+        break;
+      default:
+        result = num1 * num2;
+    }
+    const userAnswer = readlineSync.question(`Question:${num1} ${current} ${num2}\nYour answer: `);
+    if (String(result) === userAnswer) {
+      console.log('Correct!');
+    }
+    if (String(result) !== userAnswer) {
+      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${result}.\nLet's try again, ${userName}!`);
+    }
+  }
+  return console.log(`Congratulations, ${userName}!`);
 };
-
-// const maxDevider = (randomNum1, randomNum2) => {
-//   let NOD = randomNum2;
-//   while (NOD >= 1) {
-//     if (randomNum1 % NOD === 0 && randomNum2 % NOD === 0) {
-//       return NOD;
-//     }
-//     NOD -= 1;
-//   }
-//   return 1;
-// };
-
-// const сheckResponses = () => {
-//   console.log('Find the greatest common divisor of given numbers.');
-//   for (let i = 0; i < 3; i += 1) {
-//     const randomNum1 = getRandomInRange(2, 30);
-//     const randomNum2 = getRandomInRange(2, 30);
-//     const userAnswer = readlineSync.question(`Question: ${randomNum1} ${randomNum2}\nYour answer: `);
-//     if (maxDevider(randomNum1, randomNum2) === Number(userAnswer)) {
-//       console.log('Correct!');
-//     }
-//     if (maxDevider(randomNum1, randomNum2) !== Number(userAnswer)) {
-//       return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${maxDevider(randomNum1, randomNum2)}.\nLet's try again, ${printName}!`);
-//     }
-//   }
-//   return console.log(`Congratulations, ${printName}!`);
-// };
-// сheckResponses();
+export {
+  checkCalc,
+};

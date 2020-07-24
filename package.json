@@ -15,11 +15,11 @@
   "license": "ISC",
   "bin": {
     "brain-games": "bin/brain-games.js",
-    "brain-even": "bin/brain-even.js",
-    "brain-calc": "bin/brain-calc.js",
-    "brain-gcd": "bin/brain-gcd.js",
-    "brain-progression": "bin/brain-progression.js",
-    "brain-prime": "bin/brain-prime.js"
+    "brain-even": "bin/games/brain-even.js",
+    "brain-calc": "bin/games/brain-calc.js",
+    "brain-gcd": "bin/games/brain-gcd.js",
+    "brain-progression": "bin/games/brain-progression.js",
+    "brain-prime": "bin/games/brain-prime.js"
   },
   "type": "module",
   "jest": {
@@ -36,7 +36,9 @@
   "homepage": "https://github.com/Mirgord/frontend-project-lvl1#readme",
   "devDependencies": {
     "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-airbnb-standard": "^3.1.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.18.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
@@ -45,7 +47,6 @@
   },
   "dependencies": {
     "@hexlet/pairs": "^1.0.15",
-    "eslint-config-airbnb": "^18.2.0",
     "readline-sync": "^1.4.10"
   }
 }
