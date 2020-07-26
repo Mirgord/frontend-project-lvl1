@@ -36,7 +36,7 @@
   "homepage": "https://github.com/Mirgord/frontend-project-lvl1#readme",
   "devDependencies": {
     "eslint": "^7.5.0",
-    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-airbnb-standard": "^3.1.0",
     "eslint-plugin-import": "^2.22.0"
   },
   "dependencies": {
