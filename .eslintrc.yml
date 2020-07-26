@@ -13,3 +13,7 @@ extends:
 rules:
   no-console: 0
   import/extensions: 0 # FIXME: remove when rule will be adjusted for new nodejs version
+<<<<<<< HEAD
+=======
+  semi: error, never
+>>>>>>> 0617dfeff02510816d00cfbb3a88213e467a92e0
