@@ -7,7 +7,7 @@ env:
   node: true
 
 extends:
-  - 'airbnb-standart'
+  - "airbnb-standard"
 
 rules:
   no-console: 0
