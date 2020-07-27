@@ -1,12 +1,9 @@
-#!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
 
-console.log('Welcome to the Brain Games!');
-
-console.log('May I have your name?');
-const printName = readlineSync.question('Your answer: ');
-console.log(`Hello, ${printName}!`);
+import {
+  welcome, askName,
+}
+  from '../index.js';
 
 const isNumberPrime = (current) => {
   for (let divider = 2; divider <= current; divider += 1) {
@@ -20,8 +17,13 @@ const isNumberPrime = (current) => {
   return 1;
 };
 
-const сheckPrimenumbers = (array) => {
+const сheckPrimeNumbers = () => {
+  console.log(welcome);
+  console.log(askName);
+  const userName = readlineSync.question('Your answer: ');
+  console.log(`Hello, ${userName}!`);
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  const array = ([15, 6, 7]);
   for (let i = 0; i < array.length; i += 1) {
     const current = array[i];
     const userAnswer = readlineSync.question(`Question: ${current}\nYour answer: `);
@@ -29,9 +31,9 @@ const сheckPrimenumbers = (array) => {
       console.log('Correct!');
     }
     if (isNumberPrime(current) !== userAnswer) {
-      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${isNumberPrime(current)}. Let's try again, ${printName}!`);
+      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${isNumberPrime(current)}. Let's try again, ${userName}!`);
     }
   }
-  return console.log(`Congratulations, ${printName}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
-сheckPrimenumbers([15, 6, 7]);
+export default сheckPrimeNumbers;

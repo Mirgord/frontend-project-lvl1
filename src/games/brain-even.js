@@ -1,12 +1,9 @@
-#!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
 
-console.log('Welcome to the Brain Games!');
-
-console.log('May I have your name?');
-const printName = readlineSync.question('Your answer: ');
-console.log(`Hello, ${printName}!`);
+import {
+  welcome, askName,
+}
+  from '../index.js';
 
 const isNumberEven = (current) => {
   if (current % 2 === 0) {
@@ -15,7 +12,12 @@ const isNumberEven = (current) => {
   return ('no');
 };
 
-const сheckResponses = (array) => {
+const сheckResponses = () => {
+  console.log(welcome);
+  console.log(askName);
+  const printName = readlineSync.question('Your answer: ');
+  console.log(`Hello, ${printName}!`);
+  const array = ([15, 6, 7]);
   console.log('Answer "yes" if the number is even, otherwise answer "no"');
   for (let i = 0; i < array.length; i += 1) {
     const current = array[i];
@@ -29,4 +31,4 @@ const сheckResponses = (array) => {
   }
   return console.log(`Congratulations, ${printName}!`);
 };
-сheckResponses([15, 6, 7]);
+export default сheckResponses;

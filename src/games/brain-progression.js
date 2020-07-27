@@ -1,14 +1,9 @@
-#!/usr/bin/env node
-
 import readlineSync from 'readline-sync';
+
 import {
   getRandomInRange, welcome, askName,
-} from '../src/index.js';
+} from '../index.js';
 
-console.log(welcome);
-console.log(askName);
-const printName = readlineSync.question('Your answer: ');
-console.log(`Hello, ${printName}!`);
 const getProgression = (numb) => {
   const array = [];
   array[0] = numb;
@@ -20,6 +15,10 @@ const getProgression = (numb) => {
 };
 
 const checkProgression = () => {
+  console.log(welcome);
+  console.log(askName);
+  const userName = readlineSync.question('Your answer: ');
+  console.log(`Hello, ${userName}!`);
   console.log('What number is missing in the progression?');
   for (let i = 0; i < 3; i += 1) {
     const randomStart = getRandomInRange(2, 50);
@@ -31,9 +30,9 @@ const checkProgression = () => {
       console.log('Correct!');
     }
     if (hiddenNumber.join() !== userAnswer) {
-      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${hiddenNumber.join()}.\nLet's try again, ${printName}!`);
+      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${hiddenNumber.join()}.\nLet's try again, ${userName}!`);
     }
   }
-  return console.log(`Congratulations, ${printName}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
-checkProgression();
+export default checkProgression;
