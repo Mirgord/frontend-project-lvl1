@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 import {
-  welcome, askName,
+  welcome, askName, evenNumber,
 }
   from '../index.js';
 
@@ -18,8 +18,9 @@ const сheckResponses = () => {
   const printName = readlineSync.question('Your answer: ');
   console.log(`Hello, ${printName}!`);
   const array = ([15, 6, 7]);
-  console.log('Answer "yes" if the number is even, otherwise answer "no"');
-  for (let i = 0; i < array.length; i += 1) {
+  console.log(evenNumber);
+  const rounds = (3);
+  for (let i = 0; i < rounds; i += 1) {
     const current = array[i];
     const userAnswer = readlineSync.question(`Question: ${current}\nYour answer: `);
     if (isNumberEven(current) === userAnswer) {

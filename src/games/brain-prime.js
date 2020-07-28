@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 import {
-  welcome, askName,
+  welcome, askName, evenNumber,
 }
   from '../index.js';
 
@@ -22,7 +22,7 @@ const сheckPrimeNumbers = () => {
   console.log(askName);
   const userName = readlineSync.question('Your answer: ');
   console.log(`Hello, ${userName}!`);
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+  console.log(evenNumber);
   const array = ([15, 6, 7]);
   for (let i = 0; i < array.length; i += 1) {
     const current = array[i];

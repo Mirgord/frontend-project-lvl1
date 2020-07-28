@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 
 import {
-  getRandomInRange, welcome, askName,
+  getRandomInRange, welcome, askName, askExpression,
 }
   from '../index.js';
 
@@ -11,9 +11,10 @@ const checkCalc = () => {
   console.log(askName);
   const userName = readlineSync.question('Your answer: ');
   console.log(`Hello, ${userName}!`);
-  console.log('What is the result of the expression?');
+  console.log(askExpression);
+  const rounds = (3);
   const operatores = ('+-*');
-  for (let i = 0; i < operatores.length; i += 1) {
+  for (let i = 0; i < rounds; i += 1) {
     const current = operatores[i];
     const num1 = getRandomInRange(1, 10);
     const num2 = getRandomInRange(1, 10);
