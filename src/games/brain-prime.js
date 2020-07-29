@@ -24,7 +24,8 @@ const сheckPrimeNumbers = () => {
   console.log(`Hello, ${userName}!`);
   console.log(evenNumber);
   const array = ([15, 6, 7]);
-  for (let i = 0; i < array.length; i += 1) {
+  const rounds = (3);
+  for (let i = 0; i < rounds; i += 1) {
     const current = array[i];
     const userAnswer = readlineSync.question(`Question: ${current}\nYour answer: `);
     if (isNumberPrime(current) === userAnswer) {

@@ -15,11 +15,12 @@ const checkCalc = () => {
   const rounds = (3);
   const operatores = ('+-*');
   for (let i = 0; i < rounds; i += 1) {
-    const current = operatores[i];
     const num1 = getRandomInRange(1, 10);
     const num2 = getRandomInRange(1, 10);
+    const randomIndex = getRandomInRange(0, 2);
+    const composition = `${num1} ${operatores[randomIndex]} ${num2}`;
     let result = 0;
-    switch (current) {
+    switch (operatores[randomIndex]) {
       case '+':
         result = num1 + num2;
         break;
@@ -29,7 +30,7 @@ const checkCalc = () => {
       default:
         result = num1 * num2;
     }
-    const userAnswer = readlineSync.question(`Question:${num1} ${current} ${num2}\nYour answer: `);
+    const userAnswer = readlineSync.question(`Question: ${composition}\nYour answer: `);
     if (String(result) === userAnswer) {
       console.log('Correct!');
     }
