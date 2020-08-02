@@ -1,7 +1,6 @@
-import readlineSync from 'readline-sync';
-
 import {
-  getRandomInRange, welcome, askName, missingNumber,
+  getRandomInRange, getUserName, missingNumber, getUserAnswer,
+  getUncorrectAnswer,
 } from '../index.js';
 
 const getProgression = (numb) => {
@@ -16,23 +15,21 @@ const getProgression = (numb) => {
 };
 
 const checkProgression = () => {
-  console.log(welcome);
-  console.log(askName);
-  const userName = readlineSync.question('Your answer: ');
-  console.log(`Hello, ${userName}!`);
+  const userName = getUserName();
   console.log(missingNumber);
   const rounds = (3);
   for (let i = 0; i < rounds; i += 1) {
     const randomStart = getRandomInRange(2, 50);
     const randomIndex = getRandomInRange(2, 9);
-    const arrayNumbers = getProgression(randomStart);
-    const hiddenNumber = arrayNumbers.splice(randomIndex, 1, '..');
-    const userAnswer = readlineSync.question(`Question: ${arrayNumbers.join(' ')} \nYour answer: `);
-    if (hiddenNumber.join() === userAnswer) {
+    const progression = getProgression(randomStart);
+    const hiddenNumber = progression.splice(randomIndex, 1, '..');
+    const userAnswer = getUserAnswer(progression.join(' '));
+    const result = hiddenNumber.join();
+    if (result === userAnswer) {
       console.log('Correct!');
     }
-    if (hiddenNumber.join() !== userAnswer) {
-      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${hiddenNumber.join()}.\nLet's try again, ${userName}!`);
+    if (result !== userAnswer) {
+      return getUncorrectAnswer([userAnswer, result, userName]);
     }
   }
   return console.log(`Congratulations, ${userName}!`);

@@ -1,7 +1,5 @@
-import readlineSync from 'readline-sync';
-
 import {
-  welcome, askName, evenNumber, getRandomInRange,
+  getUserName, evenNumber, getRandomInRange, getUserAnswer, getUncorrectAnswer,
 }
   from '../index.js';
 
@@ -13,22 +11,20 @@ const isNumberEven = (current) => {
 };
 
 const сheckResponses = () => {
-  console.log(welcome);
-  console.log(askName);
-  const printName = readlineSync.question('Your answer: ');
-  console.log(`Hello, ${printName}!`);
+  const userName = getUserName();
   console.log(evenNumber);
   const rounds = (3);
   for (let i = 0; i < rounds; i += 1) {
     const randomNum = getRandomInRange(1, 20);
-    const userAnswer = readlineSync.question(`Question: ${randomNum}\nYour answer: `);
-    if (isNumberEven(randomNum) === userAnswer) {
+    const userAnswer = getUserAnswer(randomNum);
+    const result = isNumberEven(randomNum);
+    if (result === userAnswer) {
       console.log('Correct!');
     }
-    if (isNumberEven(randomNum) !== userAnswer) {
-      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${isNumberEven(randomNum)}. Let's try again, ${printName}!`);
+    if (result !== userAnswer) {
+      return getUncorrectAnswer([userAnswer, result, userName]);
     }
   }
-  return console.log(`Congratulations, ${printName}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
 export default сheckResponses;

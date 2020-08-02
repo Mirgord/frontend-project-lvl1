@@ -1,7 +1,5 @@
-import readlineSync from 'readline-sync';
-
 import {
-  getRandomInRange, welcome, askName, maxDivider,
+  getRandomInRange, getUserName, maxDivider, getUserAnswer, getUncorrectAnswer,
 }
   from '../index.js';
 
@@ -16,21 +14,20 @@ const isMaxDevider = (randomNum1, randomNum2) => {
 };
 
 const сheckResponses = () => {
-  console.log(welcome);
-  console.log(askName);
-  const userName = readlineSync.question('Your answer: ');
-  console.log(`Hello, ${userName}!`);
+  const userName = getUserName();
   console.log(maxDivider);
   const rounds = (3);
   for (let i = 0; i < rounds; i += 1) {
     const randomNum1 = getRandomInRange(2, 30);
     const randomNum2 = getRandomInRange(2, 30);
-    const userAnswer = readlineSync.question(`Question: ${randomNum1} ${randomNum2}\nYour answer: `);
-    if (isMaxDevider(randomNum1, randomNum2) === userAnswer) {
+    const response = `${randomNum1} ${randomNum2}`;
+    const userAnswer = getUserAnswer(response);
+    const result = isMaxDevider(randomNum1, randomNum2);
+    if (result === userAnswer) {
       console.log('Correct!');
     }
-    if (isMaxDevider(randomNum1, randomNum2) !== userAnswer) {
-      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${isMaxDevider(randomNum1, randomNum2)}.\nLet's try again, ${userName}!`);
+    if (result !== userAnswer) {
+      return getUncorrectAnswer([userAnswer, result, userName]);
     }
   }
   return console.log(`Congratulations, ${userName}!`);

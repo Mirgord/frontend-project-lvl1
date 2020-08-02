@@ -1,7 +1,5 @@
-import readlineSync from 'readline-sync';
-
 import {
-  welcome, askName, evenNumber,
+  getUserName, primeNumber, getUserAnswer, getUncorrectAnswer,
 }
   from '../index.js';
 
@@ -18,21 +16,19 @@ const isNumberPrime = (current) => {
 };
 
 const сheckPrimeNumbers = () => {
-  console.log(welcome);
-  console.log(askName);
-  const userName = readlineSync.question('Your answer: ');
-  console.log(`Hello, ${userName}!`);
-  console.log(evenNumber);
+  const userName = getUserName();
+  console.log(primeNumber);
   const array = ([15, 6, 7]);
   const rounds = (3);
   for (let i = 0; i < rounds; i += 1) {
     const current = array[i];
-    const userAnswer = readlineSync.question(`Question: ${current}\nYour answer: `);
-    if (isNumberPrime(current) === userAnswer) {
+    const userAnswer = getUserAnswer(current);
+    const result = isNumberPrime(current);
+    if (result === userAnswer) {
       console.log('Correct!');
     }
-    if (isNumberPrime(current) !== userAnswer) {
-      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${isNumberPrime(current)}. Let's try again, ${userName}!`);
+    if (result !== userAnswer) {
+      return getUncorrectAnswer([userAnswer, result, userName]);
     }
   }
   return console.log(`Congratulations, ${userName}!`);
