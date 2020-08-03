@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import сheckResponses from '../src/games/brain-even.js';
+import сheckEvenNumbers from '../src/games/brain-even.js';
 
-сheckResponses();
+сheckEvenNumbers();

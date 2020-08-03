@@ -1,7 +1,6 @@
-import {
-  getUserName, evenNumber, getRandomInRange, getUserAnswer, getUncorrectAnswer,
-}
-  from '../index.js';
+import checkResponses from '../index.js';
+
+import getRandomInRange from '../utils.js';
 
 const isNumberEven = (current) => {
   if (current % 2 === 0) {
@@ -10,21 +9,15 @@ const isNumberEven = (current) => {
   return ('no');
 };
 
-const сheckResponses = () => {
-  const userName = getUserName();
-  console.log(evenNumber);
+const сheckEvenNumbers = () => {
+  const discription = ('Answer "yes" if the number is even, otherwise answer "no"');
   const rounds = (3);
+  const array = [];
   for (let i = 0; i < rounds; i += 1) {
     const randomNum = getRandomInRange(1, 20);
-    const userAnswer = getUserAnswer(randomNum);
-    const result = isNumberEven(randomNum);
-    if (result === userAnswer) {
-      console.log('Correct!');
-    }
-    if (result !== userAnswer) {
-      return getUncorrectAnswer([userAnswer, result, userName]);
-    }
+    const answer = (isNumberEven(randomNum));
+    array.push([randomNum, answer]);
   }
-  return console.log(`Congratulations, ${userName}!`);
+  checkResponses(discription, array);
 };
-export default сheckResponses;
+export default сheckEvenNumbers;

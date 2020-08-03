@@ -1,7 +1,6 @@
-import {
-  getUserName, primeNumber, getUserAnswer, getUncorrectAnswer,
-}
-  from '../index.js';
+import checkResponses from '../index.js';
+
+import getRandomInRange from '../utils.js';
 
 const isNumberPrime = (current) => {
   for (let divider = 2; divider <= current; divider += 1) {
@@ -16,21 +15,14 @@ const isNumberPrime = (current) => {
 };
 
 const сheckPrimeNumbers = () => {
-  const userName = getUserName();
-  console.log(primeNumber);
-  const array = ([15, 6, 7]);
+  const discription = ('Answer "yes" if given number is prime. Otherwise answer "no".');
   const rounds = (3);
+  const array = [];
   for (let i = 0; i < rounds; i += 1) {
-    const current = array[i];
-    const userAnswer = getUserAnswer(current);
-    const result = isNumberPrime(current);
-    if (result === userAnswer) {
-      console.log('Correct!');
-    }
-    if (result !== userAnswer) {
-      return getUncorrectAnswer([userAnswer, result, userName]);
-    }
+    const randomNum = getRandomInRange(4, 7);
+    const result = isNumberPrime(randomNum);
+    array.push([randomNum, result]);
   }
-  return console.log(`Congratulations, ${userName}!`);
+  checkResponses(discription, array);
 };
 export default сheckPrimeNumbers;

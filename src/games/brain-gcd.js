@@ -1,7 +1,6 @@
-import {
-  getRandomInRange, getUserName, maxDivider, getUserAnswer, getUncorrectAnswer,
-}
-  from '../index.js';
+import checkResponses from '../index.js';
+
+import getRandomInRange from '../utils.js';
 
 const isMaxDevider = (randomNum1, randomNum2) => {
   let devider = randomNum2;
@@ -13,23 +12,17 @@ const isMaxDevider = (randomNum1, randomNum2) => {
   return 1;
 };
 
-const сheckResponses = () => {
-  const userName = getUserName();
-  console.log(maxDivider);
+const checkMaxDevider = () => {
+  const discription = ('Find the greatest common divisor of given numbers.');
   const rounds = (3);
+  const array = [];
   for (let i = 0; i < rounds; i += 1) {
     const randomNum1 = getRandomInRange(2, 30);
     const randomNum2 = getRandomInRange(2, 30);
     const response = `${randomNum1} ${randomNum2}`;
-    const userAnswer = getUserAnswer(response);
     const result = isMaxDevider(randomNum1, randomNum2);
-    if (result === userAnswer) {
-      console.log('Correct!');
-    }
-    if (result !== userAnswer) {
-      return getUncorrectAnswer([userAnswer, result, userName]);
-    }
+    array.push([response, result]);
   }
-  return console.log(`Congratulations, ${userName}!`);
+  checkResponses(discription, array);
 };
-export default сheckResponses;
+export default checkMaxDevider;

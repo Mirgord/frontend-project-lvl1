@@ -1,13 +1,12 @@
-import {
-  getRandomInRange, getUserName, askExpression, getUserAnswer, getUncorrectAnswer,
-}
-  from '../index.js';
+import checkResponses from '../index.js';
+
+import getRandomInRange from '../utils.js';
 
 const checkCalc = () => {
-  const userName = getUserName();
-  console.log(askExpression);
+  const discription = ('What is the result of the expression?');
   const rounds = (3);
   const operatores = ('+-*');
+  const array = [];
   for (let i = 0; i < rounds; i += 1) {
     const num1 = getRandomInRange(1, 10);
     const num2 = getRandomInRange(1, 10);
@@ -24,14 +23,8 @@ const checkCalc = () => {
       default:
         result = String(num1 * num2);
     }
-    const userAnswer = getUserAnswer(composition);
-    if (result === userAnswer) {
-      console.log('Correct!');
-    }
-    if (result !== userAnswer) {
-      return getUncorrectAnswer([userAnswer, result, userName]);
-    }
+    array.push([composition, result]);
   }
-  return console.log(`Congratulations, ${userName}!`);
+  checkResponses(discription, array);
 };
 export default checkCalc;
