@@ -1,6 +1,7 @@
-import checkResponses from '../index.js';
-
+import startGame from '../index.js';
 import getRandomInRange from '../utils.js';
+
+const discription = ('Find the greatest common divisor of given numbers.');
 
 const isMaxDevider = (randomNum1, randomNum2) => {
   let devider = randomNum2;
@@ -12,9 +13,8 @@ const isMaxDevider = (randomNum1, randomNum2) => {
   return 1;
 };
 
-const checkMaxDevider = () => {
-  const discription = ('Find the greatest common divisor of given numbers.');
-  const rounds = (3);
+const runGame = () => {
+  const rounds = 3;
   const array = [];
   for (let i = 0; i < rounds; i += 1) {
     const randomNum1 = getRandomInRange(2, 30);
@@ -23,6 +23,6 @@ const checkMaxDevider = () => {
     const result = isMaxDevider(randomNum1, randomNum2);
     array.push([response, result]);
   }
-  checkResponses(discription, array);
+  startGame(discription, array);
 };
-export default checkMaxDevider;
+export default runGame;

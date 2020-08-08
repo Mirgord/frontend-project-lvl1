@@ -1,17 +1,13 @@
 {
   "name": "vladimir",
   "version": "1.0.0",
-  "description": "<a href=\"https://codeclimate.com/github/codeclimate/codeclimate/maintainability\"><img src=\"https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability\" /></a> [![Node CI](https://github.com/Mirgord/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/Mirgord/frontend-project-lvl1/actions) https://asciinema.org/a/dEQK6PeAUZykbYHZDRXbeIFqd",
-  "main": "index.js",
-  "directories": {
-    "example": "example"
-  },
+  "description": "Brain-games",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production babel src --out-dir dist",
     "prepublishOnly": "npm run build"
   },
-  "author": "",
+  "author": "Vladimir Kuryatnikov",
   "license": "ISC",
   "bin": {
     "brain-games": "bin/brain-games.js",
@@ -41,7 +37,6 @@
     "eslint-plugin-import": "^2.22.0"
   },
   "dependencies": {
-    "@hexlet/pairs": "^1.0.15",
     "readline-sync": "^1.4.10"
   }
 }

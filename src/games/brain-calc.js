@@ -1,30 +1,36 @@
-import checkResponses from '../index.js';
-
+import startGame from '../index.js';
 import getRandomInRange from '../utils.js';
 
+const discription = ('What is the result of the expression?');
+
+const getResponseCalc = (coll) => {
+  const [num1, num2, operator] = coll;
+  const composition = (`${num1} ${operator} ${num2}`);
+  let result = '';
+  switch (operator) {
+    case '+':
+      result = String(num1 + num2);
+      break;
+    case '-':
+      result = String(num1 - num2);
+      break;
+    default:
+      result = String(num1 * num2);
+  }
+  return ([composition, result]);
+};
+
 const checkCalc = () => {
-  const discription = ('What is the result of the expression?');
-  const rounds = (3);
-  const operatores = ('+-*');
+  const operatores = '+-*';
+  const rounds = 3;
   const array = [];
   for (let i = 0; i < rounds; i += 1) {
-    const num1 = getRandomInRange(1, 10);
-    const num2 = getRandomInRange(1, 10);
+    const randomNum1 = getRandomInRange(1, 10);
+    const randomNum2 = getRandomInRange(1, 10);
     const randomIndex = getRandomInRange(0, 2);
-    const composition = `${num1} ${operatores[randomIndex]} ${num2}`;
-    let result = '';
-    switch (operatores[randomIndex]) {
-      case '+':
-        result = String(num1 + num2);
-        break;
-      case '-':
-        result = String(num1 - num2);
-        break;
-      default:
-        result = String(num1 * num2);
-    }
-    array.push([composition, result]);
+    const result = getResponseCalc([randomNum1, randomNum2, operatores[randomIndex]]);
+    array.push(result);
   }
-  checkResponses(discription, array);
+  startGame(discription, array);
 };
 export default checkCalc;

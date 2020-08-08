@@ -1,23 +1,23 @@
-import checkResponses from '../index.js';
-
+import startGame from '../index.js';
 import getRandomInRange from '../utils.js';
 
-const isNumberEven = (current) => {
-  if (current % 2 === 0) {
+const discription = ('Answer "yes" if the number is even, otherwise answer "no"');
+
+const isEven = (num) => {
+  if (num % 2 === 0) {
     return ('yes');
   }
   return ('no');
 };
 
-const сheckEvenNumbers = () => {
-  const discription = ('Answer "yes" if the number is even, otherwise answer "no"');
-  const rounds = (3);
+const runGame = () => {
+  const rounds = 3;
   const array = [];
   for (let i = 0; i < rounds; i += 1) {
     const randomNum = getRandomInRange(1, 20);
-    const answer = (isNumberEven(randomNum));
-    array.push([randomNum, answer]);
+    const result = (isEven(randomNum));
+    array.push([randomNum, result]);
   }
-  checkResponses(discription, array);
+  startGame(discription, array);
 };
-export default сheckEvenNumbers;
+export default runGame;
