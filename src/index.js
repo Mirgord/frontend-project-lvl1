@@ -7,13 +7,13 @@ const startGame = (discription, coll) => {
   console.log(`Hello, ${userName}!`);
   console.log(discription);
   for (let i = 0; i < coll.length; i += 1) {
-    const [value, result] = coll[i];
-    const userAnswer = readlineSync.question(`Question: ${value}\nYour answer: `);
-    if (result === userAnswer) {
+    const [composition, rightAnswer] = coll[i];
+    const userAnswer = readlineSync.question(`Question: ${composition}\nYour answer: `);
+    if (rightAnswer === userAnswer) {
       console.log('Correct!');
     }
-    if (result !== userAnswer) {
-      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${result}.\nLet's try again, ${userName}!`);
+    if (rightAnswer !== userAnswer) {
+      return console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${rightAnswer}.\nLet's try again, ${userName}!`);
     }
   }
   return console.log(`Congratulations, ${userName}!`);

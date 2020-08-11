@@ -13,16 +13,17 @@ const getProgression = (coll) => {
   return result;
 };
 
-const runGame = () => {
+const checkProgression = () => {
   const rounds = 3;
   const array = [];
+
   for (let i = 0; i < rounds; i += 1) {
-    const randomStart = getRandomInRange(2, 50);
-    const randomIndex = getRandomInRange(2, 9);
-    const progression = getProgression([randomStart]);
-    const hiddenNumber = progression.splice(randomIndex, 1, '..');
-    array.push([progression.join(' '), hiddenNumber.join()]);
+    const startNum = getRandomInRange(2, 50);
+    const index = getRandomInRange(2, 9);
+    const progression = getProgression([startNum]);
+    const hiddenNum = progression.splice(index, 1, '..');
+    array.push([progression.join(' '), hiddenNum.join()]);
   }
   startGame(discription, array);
 };
-export default runGame;
+export default checkProgression;

@@ -7,6 +7,7 @@ const getResponseCalc = (coll) => {
   const [num1, num2, operator] = coll;
   const composition = (`${num1} ${operator} ${num2}`);
   let result = '';
+
   switch (operator) {
     case '+':
       result = String(num1 + num2);
@@ -24,11 +25,12 @@ const checkCalc = () => {
   const operatores = '+-*';
   const rounds = 3;
   const array = [];
+
   for (let i = 0; i < rounds; i += 1) {
-    const randomNum1 = getRandomInRange(1, 10);
-    const randomNum2 = getRandomInRange(1, 10);
-    const randomIndex = getRandomInRange(0, 2);
-    const result = getResponseCalc([randomNum1, randomNum2, operatores[randomIndex]]);
+    const num1 = getRandomInRange(1, 10);
+    const num2 = getRandomInRange(1, 10);
+    const index = getRandomInRange(0, 2);
+    const result = getResponseCalc([num1, num2, operatores[index]]);
     array.push(result);
   }
   startGame(discription, array);
