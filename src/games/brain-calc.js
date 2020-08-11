@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import { startGame, iteration } from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const discription = ('What is the result of the expression?');
@@ -23,10 +23,9 @@ const getResponseCalc = (coll) => {
 
 const checkCalc = () => {
   const operatores = '+-*';
-  const rounds = 3;
   const array = [];
 
-  for (let i = 0; i < rounds; i += 1) {
+  for (let i = 0; i < iteration; i += 1) {
     const num1 = getRandomInRange(1, 10);
     const num2 = getRandomInRange(1, 10);
     const index = getRandomInRange(0, 2);

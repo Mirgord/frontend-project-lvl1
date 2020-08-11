@@ -1,11 +1,14 @@
 import readlineSync from 'readline-sync';
 
+const iteration = 3;
+
 const startGame = (discription, coll) => {
   console.log('Welcome to the Brain Games!');
   console.log('May I have your name?');
   const userName = readlineSync.question('Your answer: ');
   console.log(`Hello, ${userName}!`);
   console.log(discription);
+
   for (let i = 0; i < coll.length; i += 1) {
     const [composition, rightAnswer] = coll[i];
     const userAnswer = readlineSync.question(`Question: ${composition}\nYour answer: `);
@@ -18,4 +21,4 @@ const startGame = (discription, coll) => {
   }
   return console.log(`Congratulations, ${userName}!`);
 };
-export default startGame;
+export { startGame, iteration };

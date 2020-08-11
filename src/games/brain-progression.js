@@ -1,12 +1,12 @@
-import startGame from '../index.js';
+import { startGame, iteration } from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const discription = ('What number is missing in the progression?');
 
 const getProgression = (coll) => {
   const array = [...coll];
-  const finish = 10;
-  for (let i = 0; i < finish; i += 1) {
+  const end = 10;
+  for (let i = 0; i < end; i += 1) {
     const lastNumb = array[array.length - 1];
     array.push(lastNumb + 2);
   }
@@ -14,10 +14,9 @@ const getProgression = (coll) => {
 };
 
 const checkProgression = () => {
-  const rounds = 3;
   const array = [];
 
-  for (let i = 0; i < rounds; i += 1) {
+  for (let i = 0; i < iteration; i += 1) {
     const startNum = getRandomInRange(2, 50);
     const index = getRandomInRange(2, 9);
     const progression = getProgression([startNum]);

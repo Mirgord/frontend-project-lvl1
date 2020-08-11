@@ -1,4 +1,4 @@
-import startGame from '../index.js';
+import { startGame, iteration } from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const discription = ('Find the greatest common divisor of given numbers.');
@@ -14,10 +14,9 @@ const isMaxDevider = (num1, num2) => {
 };
 
 const checkMaxDevider = () => {
-  const rounds = 3;
   const array = [];
 
-  for (let i = 0; i < rounds; i += 1) {
+  for (let i = 0; i < iteration; i += 1) {
     const num1 = getRandomInRange(2, 30);
     const num2 = getRandomInRange(2, 30);
     const response = `${num1} ${num2}`;
