@@ -30,8 +30,8 @@ const checkCalc = () => {
     const num1 = getRandomInRange(1, 10);
     const num2 = getRandomInRange(1, 10);
     const index = getRandomInRange(0, 2);
-    const result = getResponseCalc([num1, num2, operatores[index]]);
-    array.push(result);
+    const composition = getResponseCalc([num1, num2, operatores[index]]);
+    array.push(composition);
   }
   startGame(discription, array);
 };

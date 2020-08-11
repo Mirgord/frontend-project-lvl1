@@ -4,13 +4,13 @@ import getRandomInRange from '../utils.js';
 const discription = ('What number is missing in the progression?');
 
 const getProgression = (coll) => {
-  const result = [...coll];
+  const array = [...coll];
   const finish = 10;
   for (let i = 0; i < finish; i += 1) {
-    const lastNumb = result[result.length - 1];
-    result.push(lastNumb + 2);
+    const lastNumb = array[array.length - 1];
+    array.push(lastNumb + 2);
   }
-  return result;
+  return array;
 };
 
 const checkProgression = () => {
