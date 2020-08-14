@@ -5,9 +5,9 @@ const discription = ('What number is missing in the progression?');
 
 const getProgression = (startNum, progressionStep) => {
   const result = [];
-  const end = 10;
+  const progressionEnd = 10;
 
-  for (let i = 0; i < end; i += 1) {
+  for (let i = 0; i < progressionEnd; i += 1) {
     const lastNumb = result[result.length - 1];
     if (result.length === 0) {
       result.push(startNum);
