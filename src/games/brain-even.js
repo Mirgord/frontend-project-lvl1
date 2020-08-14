@@ -1,4 +1,4 @@
-import { startGame, iteration } from '../index.js';
+import { runGame, iteration } from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const discription = ('Answer "yes" if the number is even, otherwise answer "no"');
@@ -11,13 +11,13 @@ const isEven = (num) => {
 };
 
 const sayEvenOrNot = () => {
-  const array = [];
+  const result = [];
 
   for (let i = 0; i < iteration; i += 1) {
     const num = getRandomInRange(1, 20);
-    const text = (isEven(num));
-    array.push([num, text]);
+    const answer = (isEven(num));
+    result.push([num, answer]);
   }
-  startGame(discription, array);
+  runGame(discription, result);
 };
 export default sayEvenOrNot;

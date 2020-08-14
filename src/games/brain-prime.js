@@ -1,4 +1,4 @@
-import { startGame, iteration } from '../index.js';
+import { runGame, iteration } from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const discription = ('Answer "yes" if given number is prime. Otherwise answer "no".');
@@ -6,20 +6,20 @@ const discription = ('Answer "yes" if given number is prime. Otherwise answer "n
 const isPrime = (num) => {
   for (let divider = 2; divider < num; divider += 1) {
     if (num % divider === 0) {
-      return false;
+      return 'no';
     }
   }
-  return true;
+  return 'yes';
 };
 
 const sayPrimeOrNot = () => {
-  const array = [];
+  const result = [];
 
   for (let i = 0; i < iteration; i += 1) {
     const num = getRandomInRange(4, 7);
-    const text = isPrime(num) ? 'yes' : 'no';
-    array.push([num, text]);
+    const answer = isPrime(num);
+    result.push([num, answer]);
   }
-  startGame(discription, array);
+  runGame(discription, result);
 };
 export default sayPrimeOrNot;

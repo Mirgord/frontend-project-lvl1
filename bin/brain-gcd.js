@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import checkMaxDevider from '../src/games/brain-gcd.js';
+import checkGCD from '../src/games/brain-gcd.js';
 
-checkMaxDevider();
+checkGCD();

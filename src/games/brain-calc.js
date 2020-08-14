@@ -1,37 +1,31 @@
-import { startGame, iteration } from '../index.js';
+import { runGame, iteration } from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const discription = ('What is the result of the expression?');
 
-const getResponseCalc = (coll) => {
-  const [num1, num2, operator] = coll;
-  const composition = (`${num1} ${operator} ${num2}`);
-  let result = '';
-
+const calculate = ([num1, num2, operator]) => {
   switch (operator) {
     case '+':
-      result = String(num1 + num2);
-      break;
+      return (num1 + num2);
     case '-':
-      result = String(num1 - num2);
-      break;
+      return (num1 - num2);
     default:
-      result = String(num1 * num2);
+      return (num1 * num2);
   }
-  return ([composition, result]);
 };
 
 const checkCalc = () => {
-  const operatores = '+-*';
-  const array = [];
+  const operatores = ['+', '-', '*'];
+  const result = [];
 
   for (let i = 0; i < iteration; i += 1) {
     const num1 = getRandomInRange(1, 10);
     const num2 = getRandomInRange(1, 10);
     const index = getRandomInRange(0, 2);
-    const composition = getResponseCalc([num1, num2, operatores[index]]);
-    array.push(composition);
+    const question = `${num1} ${operatores[index]} ${num2}`;
+    const composition = calculate([num1, num2, operatores[index]]);
+    result.push([question, String(composition)]);
   }
-  startGame(discription, array);
+  runGame(discription, result);
 };
 export default checkCalc;
