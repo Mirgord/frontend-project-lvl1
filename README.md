@@ -17,27 +17,27 @@ $ npm link
 ```sh
 $ brain-even
 ```
-[![asciicast](https://asciinema.org/a/dEQK6PeAUZykbYHZDRXbeIFqd.svg)](https://asciinema.org/a/dEQK6PeAUZykbYHZDRXbeIFqd)
+[![asciicast](https://asciinema.org/a/sm6hrOVdVM3eAieENaviUJL00.svg)](https://asciinema.org/a/sm6hrOVdVM3eAieENaviUJL00)
 
 ```sh
 $ brain-calc
 ```
 
-[![asciicast](https://asciinema.org/a/348353.svg)](https://asciinema.org/a/348353)
+[![asciicast](https://asciinema.org/a/354097.svg)](https://asciinema.org/a/354097)
 
 ```sh
 $ brain-gcd
 ```
 
-[![asciicast](https://asciinema.org/a/348652.svg)](https://asciinema.org/a/348652)
+[![asciicast](https://asciinema.org/a/354098.svg)](https://asciinema.org/a/354098)
 
 ```sh
 $ brain-progression
 ```
 
-[![asciicast](https://asciinema.org/a/348953.svg)](https://asciinema.org/a/348953)
+[![asciicast](https://asciinema.org/a/354101.svg)](https://asciinema.org/a/354101)
 
 ```sh
 $ brain-prime
 ```
-[![asciicast](https://asciinema.org/a/348971.svg)](https://asciinema.org/a/348971)
+[![asciicast](https://asciinema.org/a/354102.svg)](https://asciinema.org/a/354102)

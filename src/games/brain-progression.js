@@ -1,17 +1,17 @@
 import { runGame, iteration } from '../index.js';
 import getRandomInRange from '../utils.js';
 
-const discription = ('What number is missing in the progression?');
+const discription = 'What number is missing in the progression?';
 
-const getProgression = (startNum, progressionStep) => {
+const getProgression = (startValue, progressionStep) => {
   const result = [];
-  const progressionEnd = 10;
+  const progressionLength = 10;
 
-  for (let i = 0; i < progressionEnd; i += 1) {
-    const lastNumb = result[result.length - 1];
+  for (let i = 0; i < progressionLength; i += 1) {
+    const lastNum = result[result.length - 1];
     if (result.length === 0) {
-      result.push(startNum);
-    } else result.push(lastNumb + progressionStep);
+      result.push(startValue);
+    } else result.push(lastNum * progressionStep);
   }
   return result;
 };
@@ -20,10 +20,10 @@ const checkProgression = () => {
   const result = [];
 
   for (let i = 0; i < iteration; i += 1) {
-    const num = getRandomInRange(2, 50);
-    const index = getRandomInRange(2, 9);
-    const progression = getProgression(num, index);
-    const hiddenNum = progression.splice(index, 1, '..');
+    const startValue = getRandomInRange(2, 20);
+    const progressionStep = getRandomInRange(2, 4);
+    const progression = getProgression(startValue, progressionStep);
+    const hiddenNum = progression.splice(progressionStep, 1, '..');
     result.push([progression.join(' '), String(hiddenNum)]);
   }
   runGame(discription, result);

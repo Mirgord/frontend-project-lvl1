@@ -1,18 +1,9 @@
 import { runGame, iteration } from '../index.js';
 import getRandomInRange from '../utils.js';
 
-const discription = ('Find the greatest common divisor of given numbers.');
+const discription = 'Find the greatest common divisor of given numbers.';
 
-const GCD = (num1, num2) => {
-  let devider = num2;
-
-  for (const end = 1; devider >= end; devider -= 1) {
-    if (num1 % devider === 0 && num2 % devider === 0) {
-      return devider;
-    }
-  }
-  return 1;
-};
+const GCD = (x, y) => (x ? GCD(y % x, x) : y);
 
 const checkGCD = () => {
   const result = [];
