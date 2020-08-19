@@ -22,9 +22,9 @@ const checkCalc = () => {
     const num1 = getRandomInRange(1, 10);
     const num2 = getRandomInRange(1, 10);
     const randomIndex = getRandomInRange(0, 2);
-    const operator = operators[randomIndex];
-    const question = `${num1} ${operator} ${num2}`;
-    const answer = calculate(num1, num2, operator);
+    const currentOperator = operators[randomIndex];
+    const question = `${num1} ${currentOperator} ${num2}`;
+    const answer = calculate(num1, num2, currentOperator);
     result.push([question, String(answer)]);
   }
   runGame(discription, result);
