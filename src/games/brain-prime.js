@@ -1,9 +1,13 @@
-import { runGame, iteration } from '../index.js';
+import { run, rounds } from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const discription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
+  if (num < 2) {
+    return false;
+  }
+
   for (let divider = 2; divider < num; divider += 1) {
     if (num % divider === 0) {
       return false;
@@ -12,14 +16,14 @@ const isPrime = (num) => {
   return true;
 };
 
-const sayPrimeOrNot = () => {
-  const result = [];
+const runGame = () => {
+  const gameData = [];
 
-  for (let i = 0; i < iteration; i += 1) {
-    const num = getRandomInRange(4, 7);
-    const answer = isPrime(num) ? 'yes' : 'no';
-    result.push([num, answer]);
+  for (let i = 0; i < rounds; i += 1) {
+    const randomNum = getRandomInRange(4, 7);
+    const answer = isPrime(randomNum) ? 'yes' : 'no';
+    gameData.push([randomNum, answer]);
   }
-  runGame(discription, result);
+  run(discription, gameData);
 };
-export default sayPrimeOrNot;
+export default runGame;

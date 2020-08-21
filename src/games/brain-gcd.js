@@ -1,20 +1,20 @@
-import { runGame, iteration } from '../index.js';
+import { run, rounds } from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const discription = 'Find the greatest common divisor of given numbers.';
 
-const GCD = (x, y) => (x ? GCD(y % x, x) : y);
+const gcd = (x, y) => (x ? gcd(y % x, x) : y);
 
-const checkGCD = () => {
-  const result = [];
+const runGame = () => {
+  const gameData = [];
 
-  for (let i = 0; i < iteration; i += 1) {
+  for (let i = 0; i < rounds; i += 1) {
     const num1 = getRandomInRange(2, 30);
     const num2 = getRandomInRange(2, 30);
     const question = `${num1} ${num2}`;
-    const answer = GCD(num1, num2);
-    result.push([question, String(answer)]);
+    const answer = gcd(num1, num2);
+    gameData.push([question, String(answer)]);
   }
-  runGame(discription, result);
+  run(discription, gameData);
 };
-export default checkGCD;
+export default runGame;

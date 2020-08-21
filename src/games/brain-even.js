@@ -1,23 +1,18 @@
-import { runGame, iteration } from '../index.js';
+import { run, rounds } from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const discription = 'Answer "yes" if the number is even, otherwise answer "no"';
 
-const isEven = (num) => {
-  if (num % 2 === 0) {
-    return true;
-  }
-  return false;
-};
+const isEven = ((num) => num % 2 === 0);
 
-const sayEvenOrNot = () => {
-  const result = [];
+const runGame = () => {
+  const question = [];
 
-  for (let i = 0; i < iteration; i += 1) {
-    const num = getRandomInRange(1, 20);
-    const answer = isEven(num) ? 'yes' : 'no';
-    result.push([num, answer]);
+  for (let i = 0; i < rounds; i += 1) {
+    const randomNum = getRandomInRange(1, 20);
+    const answer = isEven(randomNum) ? 'yes' : 'no';
+    question.push([randomNum, answer]);
   }
-  runGame(discription, result);
+  run(discription, question);
 };
-export default sayEvenOrNot;
+export default runGame;

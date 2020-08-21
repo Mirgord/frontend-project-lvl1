@@ -1,7 +1,8 @@
-import { runGame, iteration } from '../index.js';
+import { run, rounds } from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const discription = 'What is the result of the expression?';
+const operators = ['+', '-', '*'];
 
 const calculate = (num1, num2, operator) => {
   switch (operator) {
@@ -9,24 +10,25 @@ const calculate = (num1, num2, operator) => {
       return num1 + num2;
     case '-':
       return num1 - num2;
-    default:
+    case '*':
       return num1 * num2;
+    default:
+      throw new Error(`Unknown order state: '${operator}'!`);
   }
 };
 
-const checkCalc = () => {
-  const operators = ['+', '-', '*'];
-  const result = [];
+const runGame = () => {
+  const gameData = [];
 
-  for (let i = 0; i < iteration; i += 1) {
+  for (let i = 0; i < rounds; i += 1) {
     const num1 = getRandomInRange(1, 10);
     const num2 = getRandomInRange(1, 10);
-    const randomIndex = getRandomInRange(0, 2);
+    const randomIndex = getRandomInRange(0, operators.length - 1);
     const currentOperator = operators[randomIndex];
     const question = `${num1} ${currentOperator} ${num2}`;
     const answer = calculate(num1, num2, currentOperator);
-    result.push([question, String(answer)]);
+    gameData.push([question, String(answer)]);
   }
-  runGame(discription, result);
+  run(discription, gameData);
 };
-export default checkCalc;
+export default runGame;

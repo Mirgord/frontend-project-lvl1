@@ -1,6 +1,5 @@
 # Brain-games
-
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+[![Maintainability](https://api.codeclimate.com/v1/badges/7b1a4c219c7626d4fb81/maintainability)](https://codeclimate.com/github/Mirgord/frontend-project-lvl1/maintainability)
 [![Node CI](https://github.com/Mirgord/frontend-project-lvl1/workflows/Node%20CI/badge.svg)](https://github.com/Mirgord/frontend-project-lvl1/actions)
 
 ### A set of minigames run from the unix shell
