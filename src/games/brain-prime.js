@@ -17,13 +17,13 @@ const isPrime = (num) => {
 };
 
 const runGame = () => {
-  const gameData = [];
+  const question = [];
 
   for (let i = 0; i < rounds; i += 1) {
     const randomNum = getRandomInRange(4, 7);
     const answer = isPrime(randomNum) ? 'yes' : 'no';
-    gameData.push([randomNum, answer]);
+    question.push([randomNum, answer]);
   }
-  run(discription, gameData);
+  run(discription, question);
 };
 export default runGame;
