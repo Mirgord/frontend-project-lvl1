@@ -1,4 +1,4 @@
-import { run, rounds } from '../index.js';
+import { runEngine, rounds } from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const discription = 'Find the greatest common divisor of given numbers.';
@@ -15,6 +15,6 @@ const runGame = () => {
     const answer = gcd(num1, num2);
     gameData.push([question, String(answer)]);
   }
-  run(discription, gameData);
+  runEngine(discription, gameData);
 };
 export default runGame;

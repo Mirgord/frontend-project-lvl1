@@ -1,4 +1,4 @@
-import { run, rounds } from '../index.js';
+import { runEngine, rounds } from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const discription = 'What is the result of the expression?';
@@ -29,6 +29,6 @@ const runGame = () => {
     const answer = calculate(num1, num2, currentOperator);
     gameData.push([question, String(answer)]);
   }
-  run(discription, gameData);
+  runEngine(discription, gameData);
 };
 export default runGame;

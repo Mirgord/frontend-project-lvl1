@@ -1,4 +1,4 @@
-import { run, rounds } from '../index.js';
+import { runEngine, rounds } from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const discription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
@@ -24,6 +24,6 @@ const runGame = () => {
     const answer = isPrime(randomNum) ? 'yes' : 'no';
     question.push([randomNum, answer]);
   }
-  run(discription, question);
+  runEngine(discription, question);
 };
 export default runGame;

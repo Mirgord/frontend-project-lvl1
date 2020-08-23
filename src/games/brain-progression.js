@@ -1,4 +1,4 @@
-import { run, rounds } from '../index.js';
+import { runEngine, rounds } from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const discription = 'What number is missing in the progression?';
@@ -24,6 +24,6 @@ const runGame = () => {
     const hiddenNum = progression.splice(randomIndex, 1, '..');
     gameData.push([progression.join(' '), String(hiddenNum)]);
   }
-  run(discription, gameData);
+  runEngine(discription, gameData);
 };
 export default runGame;

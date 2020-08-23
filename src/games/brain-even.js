@@ -1,4 +1,4 @@
-import { run, rounds } from '../index.js';
+import { runEngine, rounds } from '../index.js';
 import getRandomInRange from '../utils.js';
 
 const discription = 'Answer "yes" if the number is even, otherwise answer "no"';
@@ -13,6 +13,6 @@ const runGame = () => {
     const answer = isEven(randomNum) ? 'yes' : 'no';
     question.push([randomNum, answer]);
   }
-  run(discription, question);
+  runEngine(discription, question);
 };
 export default runGame;
